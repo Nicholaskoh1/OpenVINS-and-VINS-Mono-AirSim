@@ -1,6 +1,6 @@
 # OpenVINS and VINS Mono AirSim
  
-Testing visual-inertial odometry in AirSimNH environment using VINS-Mono and OpenVINS
+Testing visual-inertial odometry in AirSimNH environment using VINS-Mono and OpenVINS.
 
 Everything is ran on ROS melodic (Ubuntu 18.04). AirSimNH is ran on Windows 10.                                                         
 
