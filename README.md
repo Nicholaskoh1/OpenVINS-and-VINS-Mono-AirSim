@@ -1,4 +1,4 @@
-# OpenVINS and VINS Mono AIrSim
+# OpenVINS and VINS Mono AirSim
  
 Testing visual-inertial odometry in AirSimNH environment using VINS-Mono and OpenVINS
 
@@ -11,8 +11,8 @@ AirSim ROS Package: https://github.com/CodexLabsLLC/Colosseum
 
 
 Tested using 2 different routes:
-- Orbit trajectory
-- Square trajectory (along the outer road of the environment)
+- Orbit trajectory (orbit.py)
+- Square trajectory (along the outer road of the environment) (myorbit.py)
 
 
 Demo Videos:
@@ -27,25 +27,37 @@ Demo Videos:
 
 How to Run:                                                                                               
 Make sure to catkin build all the repositories first
-Terminal 1:
-cd <path-to-Colosseum>/ros
-source devel/setup.bash
-roslaunch airsim_ros_pkgs airsim_node.launch
+
+Terminal 1:                                                                                                                                                                      
+cd <path-to-Colosseum_repository>/ros                                                                                                                                         
+source devel/setup.bash                                                                                                                                                          
+roslaunch airsim_ros_pkgs airsim_node.launch                                
  
-Terminal 2:
-cd <your_catkin_ws>
-source devel_setup.bash
+Terminal 2:                                                                                                                                                                      
+cd <your_catkin_ws>                                                                                                                                                            
+source devel_setup.bash                                                                                                                                                          
 rosrun my_airsim publisher_node.py
  
-Terminal 3:
-cd <path-to-my_airsim>/scripts/multirotor
+Terminal 3:                                                                                                                                                                       
+cd <path-to-my_airsim>/scripts/multirotor                                                                                                                                        
 python3 subscriber_node.py
 
-Terminal 3:
-cd <your_catkin_ws>
-source devel_setup.bash
-roslaunch vins_estimator vins_rviz.launch          # For VINS-Mono
-rosrun rviz rviz -d <path-to-open_vins>/ov_msckf/launch/display.rviz          # For OpenVINS
+Terminal 4:                                                                                                                                                                      
+cd <your_catkin_ws>                                                                                                                                                               
+source devel_setup.bash                                                                                                                                                          
+roslaunch vins_estimator vins_rviz.launch          # For VINS-Mono                                                                                                               
+rosrun rviz rviz -d <path-to-open_vins>/ov_msckf/launch/display.rviz          # For OpenVINS                                 
+ 
+Terminal 5:                                                                                                                                                                      
+cd <your_catkin_ws>                                                                                                                                                               
+source devel/setup.bash                                                                                                                                                           
+roslaunch vins_estimator euroc.launch          # For VINS-Mono                                                                                                                   
+roslaunch ov_msckf subscribe.launch          # For OpenVINS
+  
+Terminal 6:                                                                                                                                                                    
+cd <path-to-my_airsim>/scripts/multirotor                                                                                                                                       
+python3 orbit.py          # For orbit trajectory                                                                                                                                 
+python3 myorbit.py          # For square trajectory
  
 
 
@@ -120,7 +132,7 @@ Long use of computer will also lead to more and more deviation in results.
 
 ---------------------------------------------------------------------------------------------------------------
 
-Test Results:                                                                                              
+Test Results: (Yellow is the best run)                                                                                             
 ![image](https://github.com/Nicholaskoh1/OpenVINS-and-VINS-Mono-AIrSim/assets/124341280/450a3e58-03f1-4f7b-bcd8-35cb74ee2d62)
 
 ![image](https://github.com/Nicholaskoh1/OpenVINS-and-VINS-Mono-AIrSim/assets/124341280/8e9878d6-ca19-40e1-8884-e789e6ba5e64)
