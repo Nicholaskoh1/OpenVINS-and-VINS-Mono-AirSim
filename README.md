@@ -4,7 +4,7 @@ Testing visual-inertial odometry in AirSimNH environment using VINS-Mono and Ope
 
 Everything is ran on ROS melodic (Ubuntu 18.04). AirSimNH is ran on Windows 10.                                                         
 
-This repository only includes the config files for VINS-Mono and OpenVINS. For the entire repository for both and the AirSim ROS package go here:                                                                                                      
+This repository only includes the config files for VINS-Mono and OpenVINS. For the entire repository for both VINS and the AirSim ROS package go here:                                                                                                      
 VINS-Mono: https://github.com/HKUST-Aerial-Robotics/VINS-Mono                                               
 OpenVINS: https://github.com/rpng/open_vins                                                                 
 AirSim ROS Package: https://github.com/CodexLabsLLC/Colosseum
